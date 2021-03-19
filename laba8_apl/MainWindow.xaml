@@ -5,26 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:laba8_apl"
         mc:Ignorable="d"
-        Foreground="Red"
         Title="MainWindow" Height="450" Width="800">
 
-    <!--
     <Window.Resources>
-        <Style TargetType="Button">
+        <Style TargetType="Grid">
             <Style.Triggers>
                 <EventTrigger RoutedEvent="Button.Click">
                     <EventTrigger.Actions>
                         <BeginStoryboard>
                             <Storyboard>
                                 <ColorAnimation Storyboard.TargetProperty="Background.Color"
-                                        To="Red" AutoReverse="True" Duration="0:0:2" />
+                                        To="Red" Duration="0:0:2" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
                 </EventTrigger>
             </Style.Triggers>
         </Style>
-    </Window.Resources>-->
+    </Window.Resources>
 
     <Grid Background="White">
         <Label x:Name="bg_color" Content="Background color:" HorizontalAlignment="Left" 
@@ -38,5 +36,7 @@
         <TextBox Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Label}}, Path=Foreground, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
             Margin="190,100,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" />
         
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="477,273,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
