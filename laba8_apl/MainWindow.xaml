@@ -32,6 +32,7 @@
         <TextBox Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Grid}}, Path=Background, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                  Margin="190,49,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" />
         
+        
         <Label x:Name="fg_color" Content="Foreground color:" HorizontalAlignment="Left" 
             Margin="20,93,0,0" VerticalAlignment="Top" FontSize="20"/>
         <TextBox Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Label}}, Path=Foreground, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
