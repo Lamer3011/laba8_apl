@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
+
+    <Grid Background="White">
+        <Label x:Name="bg_color" Content="Background color:" HorizontalAlignment="Left" 
+               Margin="20,42,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Grid}}, Path=Background, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 Margin="190,49,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+
+        <Label x:Name="fg_color" HorizontalAlignment="Left" 
+            Margin="20,93,0,0" VerticalAlignment="Top" FontSize="20" Foreground="RED">
+            <StackPanel>
+                <TextBlock Text="Foreground color:"/>
+                <TextBox Text="{Binding Foreground, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Label}, Mode=FindAncestor}, UpdateSourceTrigger=PropertyChanged}" 
+                FontSize="20"/>
+            </StackPanel>
+        </Label>
+
+
+        <Button x:Name="button" Content="Змінити колір" Margin="0,0,28,32" HorizontalAlignment="Right"
+                Width="176" Height="53" VerticalAlignment="Bottom" FontSize="20"/>
+
+    </Grid>
+
     <Window.Resources>
         <Style TargetType="Grid">
             <Style.Triggers>
@@ -23,20 +46,4 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-
-    <Grid Background="White">
-        <Label x:Name="bg_color" Content="Background color:" HorizontalAlignment="Left" 
-               Margin="20,42,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Grid}}, Path=Background, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                 Margin="190,49,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        
-        
-        <Label x:Name="fg_color" Content="Foreground color:" HorizontalAlignment="Left" 
-            Margin="20,93,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Label}}, Path=Foreground, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-            Margin="190,100,0,0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="477,273,0,0" VerticalAlignment="Top"/>
-
-    </Grid>
 </Window>
